@@ -1,0 +1,56 @@
+        document.addEventListener("d365mkt-afterformload", function() {
+            //specify the 3 option sets
+    var country = document.querySelector('[data-targetproperty="pk_option1"] select');
+    var industry = document.querySelector('[data-targetproperty="pk_option2"] select');
+    var product = document.querySelector('[data-targetproperty="pk_option3"] select');
+
+    // Store the options for the first option plus their related second options 
+    var industryOptions = {
+        '125550000': ['125550000', '125550001'], // Germany: Retail, Manufacturing
+        '125550001': ['125550002', '125550003'], // Belgium: Telecommunication, Books
+        '125550002': ['125550004', '125550005']  // Finland: Service, IT
+    };
+
+    var productOptions = {
+        //Store the relations between the second and the third options
+        '125550000': ['125550000', '125550001'], // Retail, Manufacturing: Product 1, Product 2
+        '125550001': ['125550000', '125550001'], // Retail, Manufacturing: Product 1, Product 2
+        '125550002': ['125550002', '125550003'], // Telecommunication, IT: Product 3, Product 4
+        '125550005': ['125550002', '125550003'], // Telecommunication, IT: Product 3, Product 4
+        '125550004': ['125550004', '125550005'], // Service, Books: Product 5, Product 6
+        '125550003': ['125550004', '125550005']  // Service, Books: Product 5, Product 6
+    };
+
+    // Function to update industry options (second option set) based on selected country (first option set)
+    function updateIndustryOptions(countryValue) {
+        var allowedIndustries = industryOptions[countryValue] || [];
+        Array.from(industry.options).forEach(option => {
+            option.style.display = allowedIndustries.includes(option.value) ? 'block' : 'none';
+        });
+
+        // Reset industry selection (option set 2)
+        industry.value = '';
+    }
+
+    // Function to update product options (third option set) based on selected industry (second option set)
+    function updateProductOptions(industryValue) {
+        var allowedProducts = productOptions[industryValue] || [];
+        Array.from(product.options).forEach(option => {
+            option.style.display = allowedProducts.includes(option.value) ? 'block' : 'none';
+        });
+
+        // Reset product selection (third option set)
+        product.value = '';
+    }
+
+    // Event listeners for changing country and industry (first and second option set)
+    country.addEventListener('change', function() {
+        updateIndustryOptions(this.value);
+        updateProductOptions(''); // Reset products on country change
+    });
+
+    industry.addEventListener('change', function() {
+        updateProductOptions(this.value);
+    });
+});
+    
