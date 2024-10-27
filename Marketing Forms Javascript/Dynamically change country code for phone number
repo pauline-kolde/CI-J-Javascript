@@ -1,0 +1,31 @@
+document.addEventListener("d365mkt-afterformload", function() {
+    const countrySelect = document.getElementById('pk_countrycode-1719506023770');
+    const phonePrefixSpan = document.querySelector('.phoneCountryCodeLabel');
+    const phoneInputDiv = document.querySelector('.phoneFormFieldBlock');
+
+    const countryPhonePrefixes = {
+        '125550000': '+376', // Andorra
+        '125550001': '+32',  // Belgium
+        '125550002': '+358', // Finland
+        '125550005': '+33',  // France
+        '125550003': '+49',  // Germany
+        '125550008': '+39',  // Italy
+        '125550010': '+47',  // Norway
+        '125550007': '+351', // Portugal
+        '125550006': '+34',  // Spain
+        '125550009': '+46',  // Sweden
+        '125550004': '+44'   // UK
+    };
+
+    countrySelect.addEventListener('change', function () {
+        const selectedValue = countrySelect.value;
+        if (countryPhonePrefixes.hasOwnProperty(selectedValue)) {
+            const newPrefix = countryPhonePrefixes[selectedValue];
+            phonePrefixSpan.textContent = newPrefix;
+            phoneInputDiv.setAttribute('data-countrycode', newPrefix);
+        } else {
+            phonePrefixSpan.textContent = ''; // Default to empty if no match found
+            phoneInputDiv.removeAttribute('data-countrycode');
+        }
+    });
+});
