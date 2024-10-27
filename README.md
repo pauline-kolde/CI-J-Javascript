@@ -3,7 +3,7 @@
 1. **Project Title and Description**:
    ```markdown
    # CI-J-Javascript
-   This is my first GitHub project. It collect all kinds of helpful javascripts that we can use in Marketing forms of Dynamics 365 Customer Insights Journeys.
+   This is my first GitHub project. It collects all kinds of helpful javascripts that we can use in Marketing forms of Dynamics 365 Customer Insights Journeys.
    
    Read more about the different scripts here: https://paulinekolde.info/javascript-library-for-real-time-marketing-form-in-customer-insights/
    Also you will find short videos to each of the scripts there.
