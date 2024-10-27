@@ -1,11 +1,11 @@
 # CI-J-Javascript
 
-To improve your README.md file, consider adding the following sections:
-
 1. **Project Title and Description**:
    ```markdown
    # CI-J-Javascript
-   This is my first GitHub project. It demonstrates basic CI/CD setup for a JavaScript project.
+   This is my first GitHub project. It collect all kinds of helpful javascripts that we can use in Marketing forms of Dynamics 365 Customer Insights Journeys.
+   Read more about the different scripts here: https://paulinekolde.info/javascript-library-for-real-time-marketing-form-in-customer-insights/
+   Also you will find short videos to each of the scripts there.
    ```
 
 2. **Table of Contents**:
@@ -44,7 +44,6 @@ To improve your README.md file, consider adding the following sections:
 6. **Contact**:
    ```markdown
    ## Contact
-   For any inquiries, please contact [your_email@example.com](mailto:your_email@example.com).
+   For any inquiries, please contact [mail@paulinekolde.info](mailto:mail@paulinekolde.info).
    ```
 
-Would you like me to update the README.md file with these sections?
