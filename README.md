@@ -14,7 +14,6 @@ To improve your README.md file, consider adding the following sections:
    - [Installation](#installation)
    - [Usage](#usage)
    - [Contributing](#contributing)
-   - [License](#license)
    - [Contact](#contact)
    ```
 
@@ -42,13 +41,7 @@ To improve your README.md file, consider adding the following sections:
    Contributions are welcome! Please fork the repository and create a pull request.
    ```
 
-6. **License**:
-   ```markdown
-   ## License
-   This project is licensed under the MIT License.
-   ```
-
-7. **Contact**:
+6. **Contact**:
    ```markdown
    ## Contact
    For any inquiries, please contact [your_email@example.com](mailto:your_email@example.com).
