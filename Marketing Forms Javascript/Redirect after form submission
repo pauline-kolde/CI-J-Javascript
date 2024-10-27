@@ -1,0 +1,9 @@
+document.addEventListener("DOMContentLoaded", function() {
+            var form = document.querySelector("form");
+            form.addEventListener("submit", function() {
+                // Replace the URL with your desired redirect URL
+                setTimeout(function() {
+                    window.location.href = "https://paulinekolde.info";
+                }, 1000);
+            });
+    });

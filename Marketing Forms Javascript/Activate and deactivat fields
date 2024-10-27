@@ -1,0 +1,17 @@
+document.addEventListener('d365mkt-afterformload', function() {
+    const purpose1 = document.getElementById('consentCheckbox-1718980818012');
+    const purpose2 = document.getElementById('consentCheckbox-1718980833715');
+purpose1.addEventListener('change', handleCheckboxChange);
+purpose2.addEventListener('change', handleCheckboxChange);
+
+function handleCheckboxChange(event) {
+     if (purpose1.checked) {
+            purpose2.disabled = true;
+    } else {
+            purpose2.disabled = false;}
+    if (purpose2.checked) {
+            purpose1.disabled = true;
+    } else {
+            purpose1.disabled = false;}
+    }
+});

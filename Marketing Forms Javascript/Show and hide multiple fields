@@ -1,0 +1,34 @@
+
+document.addEventListener('d365mkt-afterformload', function () {
+    const purpose1 = document.getElementById('consentCheckbox-1718980818012');
+    const purpose2 = document.getElementById('consentCheckbox-1718980833715');
+    const topicCheckboxes1 = document.querySelectorAll('.topicCheckbox1');
+    const topicCheckboxes2 = document.querySelectorAll('.topicCheckbox2');
+
+// Function to handle the display of topic checkboxes based on purpose1's state
+    function handleTopicCheckboxes1() {
+        topicCheckboxes1.forEach(function (checkbox) {
+                checkbox.style.display = purpose1.checked ? 'block' : 'none';
+            });
+        }
+
+// Function to handle the display of topic checkboxes based on purpose2's state
+    function handleTopicCheckboxes2() {
+        topicCheckboxes2.forEach(function (checkbox) {
+                checkbox.style.display = purpose2.checked ? 'block' : 'none';
+            });
+        }
+
+        // Attach event listeners
+        purpose1.addEventListener('change', function(event) {
+            handleTopicCheckboxes1();
+        });
+
+        purpose2.addEventListener('change', function(event) {
+            handleTopicCheckboxes2();
+        });
+
+        // Initial hiding of all topic checkboxes
+        handleTopicCheckboxes1();
+        handleTopicCheckboxes2();
+    });

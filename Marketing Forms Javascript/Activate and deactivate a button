@@ -1,0 +1,13 @@
+document.addEventListener('d365mkt-afterformload', function () {
+    const purpose1 = document.getElementById('consentCheckbox-1718980818012');
+    const submit = document.getElementById("submitButton");
+    purpose1.addEventListener('change', enableButton);
+    function enableButton() {
+        if (purpose1.checked === true) {
+        submit.disabled = false;
+        submit.style.backgroundColor = 'green';
+        }
+        else {
+        submit.disabled = true;
+        submit.style.backgroundColor = 'red';
+        }}});

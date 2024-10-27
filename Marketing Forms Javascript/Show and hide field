@@ -1,0 +1,14 @@
+
+document.addEventListener('d365mkt-afterformload', function () {
+     let customer = document.querySelector('input[name="pk_existingcustomer"]');
+     document.querySelector('input[name="pk_customernumber"]').style.display = 'none';
+     customer.addEventListener('change', showCustomerNumber);
+
+     function showCustomerNumber() {
+     if (customer.checked === true) {
+     document.querySelector('input[name="pk_customernumber"]').style.display = 'block';
+     }
+     else {
+     document.querySelector('input[name="pk_customernumber"]').style.display = 'none';
+     }
+     }});

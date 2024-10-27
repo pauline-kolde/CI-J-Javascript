@@ -1,0 +1,22 @@
+document.addEventListener("d365mkt-afterformload", function() {
+// Get the feedback rating and priority select elements
+    var feedbackRatingSelect = document.getElementById("pk_feedbackrating-1719156066672");
+    var prioritySelect = document.getElementById("pk_priority-1719157920040");
+
+// Function to update the priority based on the feedback rating
+    function updatePriority() {
+        var feedbackRating = feedbackRatingSelect.value;
+        if (feedbackRating === "125550000") { // Satisfied
+            prioritySelect.value = "0"; // Low
+        } else if (feedbackRating === "125550001") { // Neutral
+            prioritySelect.value = "1"; // Medium (Normal)
+        } else if (feedbackRating === "125550002") { // Dissatisfied
+            prioritySelect.value = "2"; // High
+        } else {
+            prioritySelect.value = ""; // Default
+        }
+    }
+
+// Add event listener to feedback rating select element
+    feedbackRatingSelect.addEventListener("change", updatePriority);
+});

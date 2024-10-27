@@ -1,0 +1,12 @@
+document.addEventListener("d365mkt-afterformload", function() {
+    var feedbackRating = document.querySelector('[data-targetproperty="pk_feedbackrating"] select');
+    var feedbackReason = document.querySelector('[data-targetproperty="pk_feedbackreason"]');
+        feedbackReason.style.display = 'none';
+//function to hide or show the reason field
+    function toggleFeedbackReason(display) {
+    feedbackReason.style.display = display ? 'block' : 'none';
+}
+//Show reason field only when feedback is satisfied
+    feedbackRating.addEventListener('change', function() {
+        toggleFeedbackReason(this.value === '125550000');
+    })});

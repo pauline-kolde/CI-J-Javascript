@@ -1,0 +1,22 @@
+/*Add <div> somewhere to your HTML:
+ <div id="bonuscode-error" style="color: red; display: none;">Bonus Code must be exactly 5 digits long.</div>
+*/
+
+document.getElementById('pk_bonuscode-1719160391752').addEventListener('input', function() {
+    const bonusCodeInput = document.getElementById('pk_bonuscode-1719160391752');
+    const errorDiv = document.getElementById('bonuscode-error');
+    const bonusCodeValue = bonusCodeInput.value;
+
+// Remove any non-numeric characters
+    const numericBonusCodeValue = bonusCodeValue.replace(/\D/g, '');
+
+// Update the input field value to only numeric characters
+        bonusCodeInput.value = numericBonusCodeValue;
+
+// Check if the input is exactly 5 digits long
+    if (numericBonusCodeValue.length === 5) {
+        errorDiv.style.display = 'none';
+    } else {
+        errorDiv.style.display = 'block';
+    }
+});
