@@ -44,6 +44,6 @@
 6. **Contact**:
    ```markdown
    ## Contact
-   For any inquiries, please contact [mail@paulinekolde.info](mailto:mail@paulinekolde.info).
+   For any inquiries, please contact mail@paulinekolde.info.
    ```
 
