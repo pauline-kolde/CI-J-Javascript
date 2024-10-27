@@ -1,0 +1,20 @@
+document.addEventListener('d365mkt-afterformload', function () {
+    const selectAllCheckbox = document.getElementById("selectall");
+    const consentCheckboxes = document.querySelectorAll('[id^="consent"]');
+var l = consentCheckboxes.length;
+selectAllCheckbox.addEventListener('change', selectAll);
+
+function selectAll() {
+    if (selectAllCheckbox.checked === true) {
+    for (var i = 0; i < l; i++) {
+     consentCheckboxes[i].checked = true;
+    }
+    } else {
+        for (var i = 0; i < l; i++) {
+          consentCheckboxes[i].checked = false;
+        }
+    }
+
+        };
+    
+    });
